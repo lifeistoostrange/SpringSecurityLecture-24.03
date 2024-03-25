@@ -23,14 +23,14 @@ public class SecurityConfig {
 					.requestMatchers("/admin/**").hasAuthority("ADMIN")
 					.anyRequest().authenticated()
 					)
-					.formLogin(auth -> auth
-							.loginPage("/user/login")			// login form
-							.loginProcessingUrl("user/login") 	// UserDetailService 구현객체에서 처리해야함
-							.usernameParameter("uid")
-							.passwordParameter("pwd")
-							.defaultSuccessUrl("/user/loginSuccess", true)
-							.permitAll()
-					)
+			.formLogin(auth -> auth
+					.loginPage("/user/login")			// login form
+					.loginProcessingUrl("user/login") 	// UserDetailService 구현객체에서 처리해야함
+					.usernameParameter("uid")
+					.passwordParameter("pwd")
+					.defaultSuccessUrl("/user/loginSuccess", true)
+					.permitAll()
+			)
 		;
 		
 		return http.build();
