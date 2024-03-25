@@ -22,8 +22,8 @@ public interface SecurityUserDao {
 	@Select("select count(uid) from securityUser where isDeleted=0")
 	int getSecurityUserCount();
 	
-	@Insert("insert into securityUser values (#{uid}, #{pwd}, #{uname}, #{email}, default, default, #{picture},"
-			+ " #{provider}, #{role}")
+	@Insert("insert into securityUser values (#{uid}, #{pwd}, #{uname}, #{email},"
+			+ " default, default, #{picture}, #{provider}, default)")
 	void insertSecurityUser(SecurityUser securityUser);
 	
 	@Update("update securityUser set pwd=#{pwd}, uname=#{uname}, email=#{email},"
