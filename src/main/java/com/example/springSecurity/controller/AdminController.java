@@ -14,4 +14,5 @@ public class AdminController {
 	public String show() {
 		return "<h1>/admin/show</h1>";
 	}
+	
 }

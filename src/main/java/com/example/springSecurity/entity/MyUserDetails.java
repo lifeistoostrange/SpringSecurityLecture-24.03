@@ -8,14 +8,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import lombok.RequiredArgsConstructor;
 
-// Spring Security가 로그인 POST 요청을 낚아채서 로그인을 진행
+// Spring Security가 로그인 POST 요청을 낚아채서 로그인을 진행시킴
 // 로컬 로그인 - UserDetails 구현
 // 소셜 로그인 - OAuth2User 구현
 @RequiredArgsConstructor
 public class MyUserDetails implements UserDetails {
 	private final SecurityUser securityUser;
-	
-	//해당 사용자의 권한 return
+
+	// 사용자의 권한을 리턴
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Collection<GrantedAuthority> collect = new ArrayList<>();
@@ -25,7 +25,7 @@ public class MyUserDetails implements UserDetails {
 				return securityUser.getRole();
 			}
 		});
-		return null;
+		return collect;
 	}
 
 	@Override
@@ -40,9 +40,8 @@ public class MyUserDetails implements UserDetails {
 
 	@Override
 	public boolean isAccountNonExpired() {
-		if (securityUser.getIsDeleted() == 0) {
+		if (securityUser.getIsDeleted() == 0)
 			return true;
-		}
 		return false;
 	}
 
