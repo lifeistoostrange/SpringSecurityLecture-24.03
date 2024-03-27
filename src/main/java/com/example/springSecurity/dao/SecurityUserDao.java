@@ -11,7 +11,7 @@ import com.example.springSecurity.entity.SecurityUser;
 
 @Mapper
 public interface SecurityUserDao {
-	
+
 	@Select("select * from securityUser where uid=#{uid}")
 	SecurityUser getUserByUid(String uid);
 	
@@ -30,7 +30,7 @@ public interface SecurityUserDao {
 			+ " picture=#{picture} where uid=#{uid}")
 	void updateSecurityUser(SecurityUser securityUser);
 	
-	@Update("update securityUser set isDeleted=1 where uid=#{uid]")
+	@Update("update securityUser set isDeleted=1 where uid=#{uid}")
 	void deleteSecurityUser(String uid);
 	
 }

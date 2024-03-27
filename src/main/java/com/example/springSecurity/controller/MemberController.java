@@ -32,7 +32,7 @@ public class MemberController {
 		
 		// Builder pattern
 		Member m2 = Member.builder()
-						.name("maria").email("maria@naver.com")
+						.name("Maria").email("maria@naver.com")
 						.build();
 		log.info(m2.toString());
 		
@@ -43,11 +43,12 @@ public class MemberController {
 	@GetMapping("/update")
 	public String update() {
 		Member member = Member.builder()
-						.mid(1).name("brian").email("brian@hotmail.com")
-						.build();
+							.mid(1).name("Brian").email("brian@human.com")
+							.build();
 		log.info(member.toString());
 		
 		return member.toString();
 	}
+	
 	
 }

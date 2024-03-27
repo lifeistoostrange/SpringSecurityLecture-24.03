@@ -16,7 +16,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class SecurityUser {
-	
 	private String uid;
 	private String pwd;
 	private String uname;
@@ -26,5 +25,4 @@ public class SecurityUser {
 	private String picture;
 	private String provider;
 	private String role;
-	
 }

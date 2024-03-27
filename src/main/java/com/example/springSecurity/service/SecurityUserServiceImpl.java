@@ -15,11 +15,11 @@ import lombok.RequiredArgsConstructor;
 public class SecurityUserServiceImpl implements SecurityUserService {
 //	private SecurityUserDao securityDao;
 //	@Autowired
-//	public SecurityUserServiceImpl(SecurityUserDao securityUserDao) {
+//	public SecurityUserServiceImpl(SecurityUserDao securityDao) {
 //		this.securityDao = securityDao;
 //	}
 	private final SecurityUserDao securityDao;
-	
+
 	@Override
 	public SecurityUser getUserByUid(String uid) {
 		return securityDao.getUserByUid(uid);

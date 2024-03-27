@@ -6,7 +6,7 @@ import com.example.springSecurity.entity.SecurityUser;
 
 public interface SecurityUserService {
 	public static final int COUNT_PER_PAGE = 10;
-
+	
 	SecurityUser getUserByUid(String uid);
 	
 	List<SecurityUser> getSecurityUserList(int page);
@@ -18,4 +18,5 @@ public interface SecurityUserService {
 	void updateSecurityUser(SecurityUser securityUser);
 	
 	void deleteSecurityUser(String uid);
+	
 }
